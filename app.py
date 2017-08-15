@@ -6,14 +6,14 @@ from flask import Flask
 import os
 
 app = Flask("service-c")
-log = logging.getLogger(app.name)
-log.setLevel(logging.DEBUG)
 
 port = int(os.getenv("PORT", "8003"))
 
 
 @app.route('/')
 def service():
+    log = logging.getLogger(app.name)
+    log.setLevel(logging.DEBUG)
     log.info(app.name + " has been called.")
 
     with b3.SubSpan() as headers:
@@ -25,10 +25,6 @@ def service():
 
 
 if __name__ == "__main__":
-
-    logging.getLogger().setLevel(logging.INFO)
-    logger = logging.getLogger(__name__)
-    logger.info("Starting " + app.name)
 
     app.before_request(b3.start_span)
     app.after_request(b3.end_span)
