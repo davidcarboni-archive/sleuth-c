@@ -7,7 +7,7 @@ import os
 
 app = Flask("service-c")
 log = logging.getLogger(app.name)
-log.setLevel(logging.INFO)
+log.setLevel(logging.DEBUG)
 
 port = int(os.getenv("PORT", "8003"))
 

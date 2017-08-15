@@ -1,4 +1,4 @@
 Flask
 Flask-B3
-Flask-Sleuth
+Flask-Sleuth>=0.0.6
 gunicorn
