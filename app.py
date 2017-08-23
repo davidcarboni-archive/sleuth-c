@@ -2,7 +2,7 @@ import logging
 import sleuth
 import b3
 
-from flask import Flask
+from flask import Flask, jsonify
 import os
 
 app = Flask("sleuth-c")
@@ -23,7 +23,9 @@ def service():
 
     log.info(app.name + " did a thing.")
 
-    return "Service call succeeded (" + app.name + ")"
+    result = b3.values()
+    result["service"] = app.name
+    return jsonify(result)
 
 
 @app.before_request
