@@ -5,7 +5,7 @@ import b3
 from flask import Flask
 import os
 
-app = Flask("service-c")
+app = Flask("sleuth-c")
 port = int(os.getenv("PORT", "8003"))
 
 # Set the root logger to INFO so we can see B3 messages:
