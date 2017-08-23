@@ -6,3 +6,6 @@ This dummy app participates in a distributed trace.
 
 This app is deployed at:
   * http://sleuth-c.ros.9ov.uk
+
+For details of this demo, see:
+  * https://github.com/rosgovuk/sleuth-demo
